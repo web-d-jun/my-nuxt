@@ -23,6 +23,7 @@ export default {
   ** Global CSS
   */
   css: [
+    'font-awesome/css/font-awesome.css'
   ],
   /*
   ** Plugins to load before mounting the App
