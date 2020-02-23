@@ -19,6 +19,7 @@
 <script>
 import MiniStatistic from '@/components/widgets/MiniStatistic.vue'
 export default {
+  layout: 'dashboard', 
   components: {
     MiniStatistic
   }
