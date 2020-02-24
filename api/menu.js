@@ -3,14 +3,14 @@ const Menu = [
     {
       title: 'Dashboard',
       group: 'apps',
-      icon: 'mdi-dashboard',
+      icon: 'mdi-view-dashboard',
       name: 'Dashboard',
       href: '/dashboard'
     },
     {
       title: 'Chat',
       group: 'apps',
-      icon: 'mdi-chat_bubble',
+      icon: 'mdi-message',
       target: '_blank',
       name: 'Chat',
       href: '/chat/messaging'
@@ -27,7 +27,7 @@ const Menu = [
       title: 'Media',
       group: 'apps',
       name: 'Media',
-      icon: 'mdi-perm_media',
+      icon: 'mdi-folder-multiple-image',
       href: '/media'
     },
     {
@@ -74,7 +74,7 @@ const Menu = [
       title: 'Pickers',
       group: 'pickers',
       component: 'picker',
-      icon: 'mdi-filter_vintage',
+      icon: 'mdi-image-filter-vintage',
       items: [
         {name: 'timepicker', title: 'Timepicker', href: '/pickers/timepicker'},
         {name: 'datepicker', title: 'Datepicker', href: '/pickers/datepicker'},
@@ -85,7 +85,7 @@ const Menu = [
       title: 'Layout',
       group: 'layout',
       component: 'layout',
-      icon: 'mdi-view_compact',
+      icon: 'mdi-view-dashboard-variant',
       items: [
         {name: 'bottom-sheets', title: 'Bottom panels', component: 'components/bottom-sheets'},
         {name: 'expansion-panels', title: 'Expansion panels', component: 'components/expansion-panels'},
@@ -102,7 +102,7 @@ const Menu = [
       title: 'Forms & Controls',
       group: 'forms',
       component: 'forms',
-      icon: 'mdi-edit',
+      icon: 'mdi-pencil',
       items: [
         {name: 'basic', title: 'General', href: '/forms/basic-forms'},
         {name: 'selects', title: 'Selects', badge: 'new', href: '/forms/selects'},
@@ -117,13 +117,13 @@ const Menu = [
     {
       title: 'Login',
       group: 'extra',
-      icon: 'mdi-list',
+      icon: 'mdi-format-list-bulleted',
       href: '/login'
     },
     {
       title: 'Empty',
       group: 'extra',
-      icon: 'mdi-insert_drive_file',
+      icon: 'mdi-file',
       href: '/empty'
     },
   ];
