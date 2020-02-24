@@ -14,7 +14,7 @@
     </v-toolbar>
     <perfect-scrollbar>
       <v-list dense expand>
-        <template v-for="item in menus">
+        <template v-for="(item,i) in menus">
           <!-- group width subitems -->
           <v-list-group
             v-if="item.items"
@@ -36,6 +36,7 @@
                 sub-group
                 :group="subitem.group"
               ></v-list-group>
+              <!-- child item -->
               <v-list-item v-else :key="i" :to="subItem.href ? subItem.href : null">
                 <v-list-item-contnet>
                   <v-list-item-title>{{subItem.title}}</v-list-item-title>
@@ -43,6 +44,17 @@
               </v-list-item>
             </template>
           </v-list-group>
+          <v-subheader v-else-if="item.header" :key="i">{{item.header}}</v-subheader>
+          <v-divider v-else-if="item.divider" :key="i"></v-divider>
+          <!-- top level link -->
+          <v-list-item v-else :to="item.href ? item.href : null" :key="item.name">
+            <v-list-item-action>
+              <v-icon>{{item.icon}}</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>{{item.title}}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
         </template>
       </v-list>
     </perfect-scrollbar>
