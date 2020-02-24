@@ -2,7 +2,7 @@
   <div id="appRoot">
     <template>
       <v-app id="inspire" class="app">
-        <!-- <app-drawer class="app--drawer"></app-drawer> -->
+        <app-drawer class="app--drawer"></app-drawer>
         <app-toolbar class="app--toolbar"></app-toolbar>
         <v-content>
           <!-- page header -->
@@ -18,10 +18,12 @@
 <script>
 import PageHeader from '@/components/PageHeader.vue'
 import AppToolbar from '@/components/AppToolbar.vue'
+import AppDrawer from '@/components/AppDrawer.vue'
 export default {
   components: {
     PageHeader,
-    AppToolbar
+    AppToolbar,
+    AppDrawer
   }
 }
 </script>
