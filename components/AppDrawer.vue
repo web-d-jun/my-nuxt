@@ -39,9 +39,9 @@
               ></v-list-group>
               <!-- child item -->
               <v-list-item v-else :key="i" :to="subItem.href ? subItem.href : null">
-                <v-list-item-contnet>
+                <v-list-item-content>
                   <v-list-item-title>{{subItem.title}}</v-list-item-title>
-                </v-list-item-contnet>
+                </v-list-item-content>
               </v-list-item>
             </template>
           </v-list-group>
@@ -63,13 +63,26 @@
 </template>
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
+import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
+import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
 import menu from '@/api/menu'
 
-@Component
+@Component({
+  components: {
+    PerfectScrollbar
+  }
+})
 export default class AppDrawer extends Vue {
   private mini: boolean = false
   private menus: any = menu
   private drawer: boolean = true
-
 }
 </script>
+<style lang="scss">
+.v-navigation-drawer__content {
+  overflow: hidden;
+  .ps {
+    height: 100vh;
+  }
+}
+</style>
