@@ -18,14 +18,14 @@
     </v-card>
 </template>
 
-<script>
-export default {
-  name: 'mini-statistic',
-  props: {
-    icon: String,
-    title: String,
-    subTitle: String,
-    color: String
-  }
+<script lang="ts">
+import {Vue, Component, Prop} from 'nuxt-property-decorator';
+
+@Component
+export default class MiniStatistic extends Vue {
+    @Prop() icon!: String;
+    @Prop() title!: String;
+    @Prop() subTitle!: String;
+    @Prop() color!: string
 }
 </script>

@@ -8,7 +8,7 @@
           <!-- page header -->
           <page-header></page-header>
           <div class="page-wrapper">
-            <!-- <nuxt /> -->
+            <nuxt />
           </div>
         </v-content>
       </v-app>

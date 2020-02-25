@@ -5,6 +5,7 @@
     app
     :dark="$vuetify.dark"
     width="260"
+    v-model="drawer"
     fixed
   >
     <v-toolbar color="primary darken-3" dense fixed>
@@ -60,15 +61,15 @@
     </perfect-scrollbar>
   </v-navigation-drawer>
 </template>
-<script>
+<script lang="ts">
+import { Vue, Component } from 'nuxt-property-decorator'
 import menu from '@/api/menu'
 
-export default {
-  name: 'app-drawer',
-  data: () => ({
-    mini: false,
-    menus: menu
-  }),
-  created() {}
+@Component
+export default class AppDrawer extends Vue {
+  private mini: boolean = false
+  private menus: any = menu
+  private drawer: boolean = true
+
 }
 </script>

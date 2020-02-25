@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar  color="primary darken-2" fixed dense app>
+  <v-app-bar color="primary darken-2" fixed dense app>
     <v-toolbar-title class="ml-0 pl-3">
       <v-app-bar-nav-icon @click.stop="toggleDrawer()"></v-app-bar-nav-icon>
     </v-toolbar-title>
@@ -26,19 +26,19 @@
   </v-app-bar>
 </template>
 
-<script>
-export default {
-  name: 'app-toolbar',
-  data: function() {
-    return {}
-  },
-  methods: {
-    toggleDrawer() {
-      alert('22')
-    },
-    handleFullScreen() {
-      alert('full screen')
-    }
+<script lang="ts">
+import { Vue, Component, Emit } from 'nuxt-property-decorator'
+
+@Component
+export default class AppToolbar extends Vue {
+  @Emit()
+  toggleDrawer() {
+    alert('22')
+  }
+
+  @Emit()
+  handleFullScreen() {
+    alert('full screen')
   }
 }
 </script>
