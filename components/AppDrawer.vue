@@ -24,7 +24,7 @@
             :prepend-icon="item.icon"
             no-action
           >
-            <template v-slot:activator>
+            <template #activator>
               <v-list-item-content>
                 <v-list-item-title>{{item.title}}</v-list-item-title>
               </v-list-item-content>
