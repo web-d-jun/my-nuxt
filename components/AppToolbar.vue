@@ -28,12 +28,21 @@
 
 <script lang="ts">
 import { Vue, Component, Emit } from 'nuxt-property-decorator'
+import { State, Mutation, namespace } from 'vuex-class'
+
+const drawerModule = namespace('DrawerModule')
 
 @Component
 export default class AppToolbar extends Vue {
+  @drawerModule.State('drawer')
+  drawerState!: boolean
+
+  @drawerModule.Mutation('toggleDrawer')
+  mutationsToggleDrawer!: any
+
   @Emit()
   toggleDrawer() {
-    alert('22')
+    this.mutationsToggleDrawer()
   }
 
   @Emit()

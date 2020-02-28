@@ -5,7 +5,7 @@
     app
     :dark="$vuetify.dark"
     width="260"
-    v-model="drawer"
+    v-if="drawer"
     fixed
   >
     <v-toolbar color="primary darken-3" dense fixed>
@@ -63,9 +63,12 @@
 </template>
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
+import { State, namespace } from 'vuex-class'
 import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
 import menu from '@/api/menu'
+
+const drawerModule = namespace('DrawerModule')
 
 @Component({
   components: {
@@ -73,9 +76,15 @@ import menu from '@/api/menu'
   }
 })
 export default class AppDrawer extends Vue {
+  @drawerModule.State('drawer')
+  drawerState!: boolean
+
   private mini: boolean = false
   private menus: any = menu
-  private drawer: boolean = true
+
+  get drawer() {
+    return this.drawerState
+  }
 }
 </script>
 <style lang="scss">
