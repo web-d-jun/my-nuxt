@@ -10,7 +10,7 @@
   >
     <v-toolbar color="primary darken-3" dense fixed>
       <v-toolbar-title class="ml-0 pl3">
-        <span class="hidden-sm-and-down">Vue.js X Nuxt.js</span>
+        <span class="hidden-sm-and-down white--text">Vue.js X Nuxt.js</span>
       </v-toolbar-title>
     </v-toolbar>
     <perfect-scrollbar>
@@ -92,6 +92,9 @@ export default class AppDrawer extends Vue {
   overflow: hidden;
   .ps {
     height: 100vh;
+  }
+  .v-toolbar__content {
+    justify-content: center;
   }
 }
 </style>
