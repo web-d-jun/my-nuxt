@@ -16,12 +16,29 @@
     </v-row>
     <v-spacer></v-spacer>
     <v-row>
-      <v-btn icon>
-        <v-icon>fa-2x fa-github</v-icon>
+      <v-btn icon @click="handleGithub()">
+        <v-icon class="white--text">fa-2x fa-github</v-icon>
       </v-btn>
       <v-btn icon @click="handleFullScreen()">
-        <v-icon>mdi-fullscreen</v-icon>
+        <v-icon class="white--text">mdi-fullscreen</v-icon>
       </v-btn>
+      <v-menu offset-y class="elelvation-1" transition="scale-transition">
+        <template #activator="{on}">
+          <v-btn icon v-on="on">
+            <v-badge color="red" overlap content="6">
+              <v-icon>mdi-bell</v-icon>
+            </v-badge>
+          </v-btn>
+        </template>
+      </v-menu>
+      <v-menu offset-y transition="scale-transition">
+          <template #activator="{on}">
+            <v-btn icon v-on="on">
+                <v-icon>mdi-account-multiple</v-icon>
+            </v-btn>
+            
+          </template>
+      </v-menu>
     </v-row>
   </v-app-bar>
 </template>
@@ -43,6 +60,11 @@ export default class AppToolbar extends Vue {
   @Emit()
   toggleDrawer() {
     this.mutationsToggleDrawer()
+  }
+
+  @Emit()
+  handleGithub() {
+    window.open('https://github.com/junyunga','')
   }
 
   @Emit()
