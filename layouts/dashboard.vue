@@ -10,6 +10,13 @@
           <div class="page-wrapper">
             <nuxt />
           </div>
+          <!-- footer -->
+          <v-footer height="auto" class="white pa-3 app--footer">
+            <span class="caption">{{new Date().getFullYear()}}</span>
+            <v-spacer></v-spacer>
+            <span class="caption mr-1">made width who</span>
+            <v-icon color="red" small>mdi-star</v-icon>
+          </v-footer>
         </v-content>
       </v-app>
     </template>
@@ -31,5 +38,11 @@ export default {
 .page-wrapper {
   min-height: calc(100vh - 64px - 50px - 81px);
   border: 1px solid red;
+}
+
+.app--footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 </style>
