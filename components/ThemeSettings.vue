@@ -26,6 +26,16 @@
               </label>
             </v-layout>
           </div>
+          <div class="theme-options">
+            <v-subheader class="px-1 my-2">Sidebar Option</v-subheader>
+            <v-divider></v-divider>
+            <div class="my-3">
+              <v-btn-toggle v-model="sideBarOption">
+                <v-btn value="dark">Dark</v-btn>
+                <v-btn value="light">Light</v-btn>
+              </v-btn-toggle>
+            </div>
+          </div>
         </v-flex>
       </v-layout>
     </v-container>
@@ -35,19 +45,18 @@
 import { Vue, Component, Watch } from 'nuxt-property-decorator'
 import colorOption from '@/api/colorOption.ts'
 
-
 @Component
 export default class ThemeSettings extends Vue {
-  private themeColor: string = 'indigo'
+  private themeColor: string = '#3f51b5'
+  private sideBarOption: string = 'light'
 
   get themeColorOptions() {
     return colorOption
   }
 
-  @Watch('themeColor')
+  @Watch('themeColor', { immediate: true, deep: true })
   handler(val: string) {
-    ;(this as any).$vuetify.theme.themes.light.primary = val
-    console.log(val)
+    (this as any).$vuetify.theme.themes.light.primary = val
   }
 }
 </script>
