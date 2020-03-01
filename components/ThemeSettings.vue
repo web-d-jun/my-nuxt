@@ -55,8 +55,16 @@ export default class ThemeSettings extends Vue {
   }
 
   @Watch('themeColor', { immediate: true, deep: true })
-  handler(val: string) {
+  themeColorhandler(val: string) {
     (this as any).$vuetify.theme.themes.light.primary = val
+  }
+  @Watch('sideBarOption', { immediate: true })
+  sideBarOptionhandler(val: string) {
+    if (val === 'dark') {
+      (this as any).$vuetify.theme.dark = true
+    } else if(val === 'light') {
+      (this as any).$vuetify.theme.dark = false
+    }
   }
 }
 </script>
