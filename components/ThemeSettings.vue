@@ -36,6 +36,19 @@
               </v-btn-toggle>
             </div>
           </div>
+          <div class="operation-group">
+            <v-subheader class="px-1 my-2">기능</v-subheader>
+            <v-divider></v-divider>
+            <div class="my-3">
+              <v-layout wrap>
+                <div class="flex pa-1 xs6">
+                    <calculator></calculator>
+                    </div>
+                <div class="flex pa-1 xs6">calender</div>
+                
+              </v-layout>
+            </div>
+          </div>
         </v-flex>
       </v-layout>
     </v-container>
@@ -44,8 +57,13 @@
 <script lang="ts">
 import { Vue, Component, Watch } from 'nuxt-property-decorator'
 import colorOption from '@/api/colorOption.ts'
+import Calculator from '@/components/widgets/Calculator.vue'
 
-@Component
+@Component({
+    components: {
+        Calculator
+    }
+})
 export default class ThemeSettings extends Vue {
   private themeColor: string = '#3f51b5'
   private sideBarOption: string = 'light'
@@ -56,14 +74,14 @@ export default class ThemeSettings extends Vue {
 
   @Watch('themeColor', { immediate: true, deep: true })
   themeColorhandler(val: string) {
-    (this as any).$vuetify.theme.themes.light.primary = val
+    ;(this as any).$vuetify.theme.themes.light.primary = val
   }
   @Watch('sideBarOption', { immediate: true })
   sideBarOptionhandler(val: string) {
     if (val === 'dark') {
-      (this as any).$vuetify.theme.dark = true
-    } else if(val === 'light') {
-      (this as any).$vuetify.theme.dark = false
+      ;(this as any).$vuetify.theme.dark = true
+    } else if (val === 'light') {
+      ;(this as any).$vuetify.theme.dark = false
     }
   }
 }
@@ -116,6 +134,9 @@ export default class ThemeSettings extends Vue {
         height: 20px;
       }
     }
+  }
+  .operation-group {
+    border: 1px solid red;
   }
 }
 </style>
