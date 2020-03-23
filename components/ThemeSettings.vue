@@ -42,7 +42,7 @@
             <div class="my-3">
               <v-layout wrap>
                 <div class="flex pa-1 xs6">
-                    <calculator></calculator>
+                    <!-- <calculator></calculator> -->
                     </div>
                 <div class="flex pa-1 xs6">calender</div>
                 
@@ -57,11 +57,11 @@
 <script lang="ts">
 import { Vue, Component, Watch } from 'nuxt-property-decorator'
 import colorOption from '@/api/colorOption.ts'
-import Calculator from '@/components/widgets/Calculator.vue'
+// import Calculator from '@/components/widgets/Calculator.vue'
 
 @Component({
     components: {
-        Calculator
+        // Calculator
     }
 })
 export default class ThemeSettings extends Vue {
